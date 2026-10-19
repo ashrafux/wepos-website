@@ -13,6 +13,7 @@ import avatarAImg from "../assets/avatar-2.jpg";
 import avatarBImg from "../assets/avatar-3.jpg";
 import "../styles/site.css";
 import "../styles/wepos-for-dokan.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 /* ── Content ── */
 /* Comparison rows. `without` is false (✕) or a short note on what you get today without wePOS. */
@@ -460,6 +461,7 @@ function SectionHead({ eyebrow, title, lead, center = true }) {
 
 /* ── Page ── */
 function WePOSForDokan() {
+  useScrollReveal();
   const [open, setOpen] = useState(null);
   const rootRef = useRef(null);
 

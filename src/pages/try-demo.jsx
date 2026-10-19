@@ -8,6 +8,7 @@ import { DokanFooter } from "../components/dokan-footer.jsx";
 import { SiteHeader } from "../components/shell.jsx";
 import "../styles/site.css";
 import "../styles/try-demo.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 /* Try Demo page app — wePOS */
 
@@ -81,6 +82,7 @@ function TdCred({ label, value }) {
 }
 
 function TryDemo() {
+  useScrollReveal();
   const [open, setOpen] = useState(0);
   const t = TD_THEME;
   const rootRef = useRef(null);

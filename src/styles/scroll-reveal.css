@@ -1,0 +1,6 @@
+/* Site-wide scroll reveal (components/scroll-reveal.js).
+   Uses the `translate` property, not `transform`, so elements that are
+   positioned or rotated with their own transform keep it. */
+.rv-pending { opacity: 0 !important; translate: 0 28px; }
+.rv-anim { transition: opacity .6s cubic-bezier(.22, .61, .36, 1) var(--rv-delay, 0ms), translate .6s cubic-bezier(.22, .61, .36, 1) var(--rv-delay, 0ms) !important; }
+@media (prefers-reduced-motion: reduce) { .rv-pending { opacity: 1 !important; translate: none; } }

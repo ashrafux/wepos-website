@@ -10,6 +10,7 @@ import avatar3Img from "../assets/avatar-3.jpg";
 import testimonialNinzasImg from "../assets/testimonial-ninzas.png";
 import testimonialOursellingImg from "../assets/testimonial-ourselling.png";
 import "../styles/home.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 /* App entry — composes all sections with dynamic data */
 
@@ -156,6 +157,7 @@ const DATA = {
 };
 
 function App() {
+  useScrollReveal();
   return (
     <>
       <Header navItems={DATA.nav.items} ctas={{ login: DATA.nav.login, primary: DATA.nav.primary }} />

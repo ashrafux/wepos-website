@@ -6,6 +6,7 @@ import { DokanFooter } from "../components/dokan-footer.jsx";
 import { SiteHeader } from "../components/shell.jsx";
 import "../styles/site.css";
 import "../styles/about.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 const STATS = [
   { n: "60K+", l: "Active stores" },
@@ -25,6 +26,7 @@ const TEAM = [
   { name: "Aiko T.", role: "Customer Success", g: "linear-gradient(135deg,#F59E0B,#DC2626)", i: "AT" },
 ];
 function About() {
+  useScrollReveal();
   return (<>
     <SiteHeader active="resource" />
     <section className="page-hero">

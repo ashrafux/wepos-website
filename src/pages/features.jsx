@@ -5,6 +5,7 @@ import { Icon } from "../components/icons.jsx";
 import { DokanFooter, ResourceMenu } from "../components/dokan-footer.jsx";
 import "../styles/features.css";
 import { NavBrand } from "../components/brand.jsx";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 /* Features page app — all sections, illustrations, data */
 
@@ -981,6 +982,7 @@ const DATA = {
 };
 
 function App() {
+  useScrollReveal();
   return (
     <>
       <Header active="features" />

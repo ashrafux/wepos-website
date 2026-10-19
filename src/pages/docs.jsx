@@ -6,6 +6,7 @@ import { DokanFooter } from "../components/dokan-footer.jsx";
 import { SiteHeader } from "../components/shell.jsx";
 import "../styles/site.css";
 import "../styles/docs.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 const SECTIONS = [
   { icon: "Cart", title: "Getting Started", desc: "Install wePOS and make your first sale.", links: ["Install & activate", "Open your first counter", "Process a sale", "Cashier basics"] },
@@ -16,6 +17,7 @@ const SECTIONS = [
   { icon: "Code", title: "Developer", desc: "Extend wePOS with hooks and the REST API.", links: ["Extension points", "REST API reference", "Webhooks", "Custom panels"] },
 ];
 function Docs() {
+  useScrollReveal();
   return (<>
     <SiteHeader active="resource" />
     <section className="page-hero">

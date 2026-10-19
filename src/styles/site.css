@@ -43,7 +43,6 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .nav-link { font-weight: 700; font-size: 16px; color: var(--c-ink-2); display: inline-flex; align-items: center; gap: 8px; cursor: pointer; transition: color .2s; position: relative; }
 .nav-link:hover { color: var(--c-purple); }
 .nav-link.active { color: var(--c-purple); }
-.nav-link.active::after { content: ''; position: absolute; bottom: -10px; left: 0; right: 0; height: 2px; background: var(--c-purple); border-radius: 2px; }
 .nav-right { display: flex; gap: 31px; align-items: center; }
 .ds-btn-small { display: inline-flex; align-items: center; justify-content: center; height: 42px; border-radius: 5px; padding: 0 22px; background: rgb(112,71,235); color: #fff; font-family: 'Lato', sans-serif; font-weight: 700; font-size: 14px; white-space: nowrap; transition: background .2s; }
 .ds-btn-small:hover { background: var(--c-purple-deep); }

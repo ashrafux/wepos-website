@@ -8,6 +8,7 @@ import { DokanFooter } from "../components/dokan-footer.jsx";
 import { SiteHeader } from "../components/shell.jsx";
 import "../styles/site.css";
 import "../styles/pricing.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 const THEME = { "heroAccent": "#2A5AFA", "tableAccent": "#6456BE" };
 const HERO_DEEP = { "#2A5AFA": "#1E40C8", "#3D5AFE": "#2438D9", "#4338CA": "#312593", "#6456BE": "#4E3FA0" };
@@ -112,6 +113,7 @@ function CmpRow({ row, info }) {
 }
 
 function Pricing() {
+  useScrollReveal();
   const [open, setOpen] = useState(1);
   const [billing, setBilling] = useState("annual");
   const t = THEME;

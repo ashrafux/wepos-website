@@ -5,6 +5,7 @@ import { DokanFooter } from "../components/dokan-footer.jsx";
 import { SiteHeader } from "../components/shell.jsx";
 import "../styles/site.css";
 import "../styles/blog.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 const CATS = ["All", "Product", "Tutorials", "Retail", "WooCommerce", "Company"];
 const GRAD = ["linear-gradient(135deg,#10B981,#0891B2)","linear-gradient(135deg,#F59E0B,#DC2626)","linear-gradient(135deg,#765FF0,#2A5AFA)","linear-gradient(135deg,#EC4899,#8B5CF6)","linear-gradient(135deg,#0EA5E9,#6366F1)","linear-gradient(135deg,#14B8A6,#22C55E)"];
@@ -17,6 +18,7 @@ const POSTS = [
   { tag: "Tutorials", title: "White-label your receipts for every vendor", excerpt: "Make each marketplace vendor's receipt feel like their own brand, end to end.", date: "Apr 23, 2026", read: "5 min read", g: 5 },
 ];
 function Blog() {
+  useScrollReveal();
   const [cat, setCat] = useState("All");
   const shown = cat === "All" ? POSTS : POSTS.filter(p => p.tag === cat);
   return (<>

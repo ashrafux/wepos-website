@@ -6,6 +6,7 @@ import { DokanFooter } from "../components/dokan-footer.jsx";
 import { SiteHeader } from "../components/shell.jsx";
 import "../styles/site.css";
 import "../styles/faq.css";
+import { useScrollReveal } from "../components/scroll-reveal.js";
 
 const GROUPS = [
   { cat: "General", qa: [
@@ -28,6 +29,7 @@ const GROUPS = [
   ]},
 ];
 function FAQ() {
+  useScrollReveal();
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState("0-0");
   const g = GROUPS[active];
