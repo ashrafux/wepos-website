@@ -1,0 +1,18 @@
+  .docs-search { max-width: 620px; margin: 32px 0 0; position: relative; }
+  .docs-search input { width: 100%; height: 60px; border-radius: 14px; border: 1px solid var(--c-slate-200); padding: 0 20px 0 54px; font-family: 'Lato'; font-size: 17px; color: var(--c-slate-900); outline: none; box-shadow: 0 8px 24px rgba(15,23,42,0.05); }
+  .docs-search input::placeholder { color: var(--c-slate-400); }
+  .docs-search .ic { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--c-slate-400); }
+  .docs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
+  .docs-card { background: #fff; border: 1px solid var(--c-slate-200); border-radius: 22px; padding: 34px; transition: transform .2s, box-shadow .2s; display: block; }
+  .docs-card:hover { transform: translateY(-4px); box-shadow: 0 24px 50px rgba(15,23,42,0.08); }
+  .docs-card-icon { width: 52px; height: 52px; border-radius: 14px; background: var(--c-purple-bg); color: var(--c-purple); display: grid; place-items: center; margin-bottom: 22px; }
+  .docs-card-title { font-family: 'Poppins'; font-weight: 700; font-size: 22px; color: var(--c-slate-900); margin: 0 0 8px; }
+  .docs-card-desc { font-family: 'Lato'; font-size: 15px; line-height: 1.5; color: var(--c-slate-600); margin: 0 0 20px; }
+  .docs-links { display: flex; flex-direction: column; gap: 11px; }
+  .docs-links a { font-family: 'Lato'; font-size: 15px; color: var(--c-slate-700); display: flex; align-items: center; gap: 8px; transition: color .15s; }
+  .docs-links a:hover { color: var(--c-purple); }
+  .docs-links a .ar { color: var(--c-slate-300); transition: transform .15s, color .15s; }
+  .docs-links a:hover .ar { color: var(--c-purple); transform: translateX(3px); }
+  .docs-cta { margin-top: 64px; background: var(--c-slate-900); border-radius: 28px; padding: 56px 64px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; }
+  .docs-cta h3 { font-family: 'Poppins'; font-weight: 700; font-size: 30px; color: #fff; margin: 0 0 10px; }
+  .docs-cta p { font-family: 'Lato'; font-size: 17px; color: rgba(255,255,255,0.7); margin: 0; }

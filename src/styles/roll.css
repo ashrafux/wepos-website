@@ -1,0 +1,36 @@
+/* ══════════ Primary button hover (from the Dokan CTA) ══════════
+   .roll-btn on the button; <RollText> / <RollIcon> from components/roll.jsx
+   inside it. On hover (and keyboard focus) the label rolls up, the arrow
+   slides through its circle, and the button lifts 2px with a soft shadow.
+   ~200ms ease-out; off for visitors who prefer reduced motion. */
+
+:is(a, button).roll-btn { transition: background-color .2s, color .2s, border-color .2s, filter .2s, opacity .2s, transform .25s, box-shadow .25s; }
+:is(a, button).roll-btn:hover, :is(a, button).roll-btn:focus-visible { transform: translateY(-2px); box-shadow: 0 14px 30px -12px rgba(0,0,0,.35); }
+
+/* Label: two stacked copies in a mask; the padding/margin pair keeps descenders visible */
+.roll-text { position: relative; display: inline-block; overflow: hidden; margin: -.18em 0 -.22em; vertical-align: middle; }
+.roll-t { display: block; padding: .18em 0 .22em; white-space: nowrap; }
+.roll-t.roll-clone { position: absolute; left: 0; top: 100%; }
+
+/* Arrow: a copy waits off to the left. Inline it clips to the icon's own box;
+   with .roll-fill it covers its circle, so the arrow crosses the whole circle. */
+.roll-icon { position: relative; display: inline-grid; overflow: hidden; vertical-align: middle; }
+.roll-icon .roll-i { grid-area: 1 / 1; display: flex; align-items: center; justify-content: center; }
+.roll-icon.roll-fill { position: absolute; inset: 0; display: grid; border-radius: inherit; }
+:has(> .roll-icon.roll-fill) { position: relative; overflow: hidden; }
+.roll-icon .roll-i.roll-clone { transform: translateX(-100%); }
+
+.roll-t, .roll-i { transition: transform .2s cubic-bezier(.22, .61, .36, 1); }
+@media (hover: hover) {
+  .roll-btn:hover .roll-t { transform: translateY(-100%); }
+  .roll-btn:hover .roll-i { transform: translateX(100%); }
+  .roll-btn:hover .roll-i.roll-clone { transform: translateX(0); }
+}
+.roll-btn:focus-visible .roll-t { transform: translateY(-100%); }
+.roll-btn:focus-visible .roll-i { transform: translateX(100%); }
+.roll-btn:focus-visible .roll-i.roll-clone { transform: translateX(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  :is(a, button).roll-btn, .roll-t, .roll-i { transition: none; }
+  :is(a, button).roll-btn:hover, :is(a, button).roll-btn:focus-visible { transform: none; }
+}

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pricing Section Options 11–20 — wePOS for Dokan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@400;700&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* Design preview only (not part of the site build). Same tokens as the For Dokan page. */
+    :root {
+      --accent: #7047EB; --accent-deep: #5C32D4; --accent-soft: #F3F0FD; --tint: #ECE7FB; --blue: #2A5AFA;
+      --ink: #141317; --slate-900: #0F172A; --slate-700: #334155; --slate-600: #475569; --slate-500: #64748B; --slate-400: #94A3B8;
+      --hair: #E7E7EA; --soft: #F7F8FA; --grey: #ECEEF0; --hero: #D7D9E2; --green: #22C55E;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: var(--slate-900); font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; }
+    ul { list-style: none; margin: 0; padding: 0; }
+    .opt { padding: 56px 24px 96px; border-top: 1px dashed #D4D4D8; overflow-x: clip; }
+    .opt:first-of-type { border-top: 0; }
+    .opt-label { max-width: 1272px; margin: 0 auto 28px; display: flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #52525B; }
+    .opt-label b { display: inline-grid; place-items: center; min-width: 30px; height: 30px; padding: 0 8px; border-radius: 999px; background: var(--ink); color: #fff; font-weight: 500; }
+    .wrap { max-width: 1200px; margin: 0 auto; }
+    body.single .opt { border: 0; padding-top: 40px; }
+
+    .eyebrow { display: inline-block; padding: 8px 16px; border-radius: 999px; background: var(--accent-soft); color: #4A3B8C; font-family: 'Inter'; font-weight: 600; font-size: 14px; }
+    .h2 { font-family: 'Poppins'; font-weight: 700; font-size: 44px; line-height: 1.14; letter-spacing: -.02em; margin: 18px 0 0; }
+    .lead { font-size: 18px; line-height: 1.6; color: var(--slate-600); margin: 14px 0 0; }
+    .center { text-align: center; }
+    .badge { display: inline-block; padding: 6px 14px; border-radius: 999px; font-family: 'Inter'; font-weight: 700; font-size: 12px; }
+    .badge.pop { background: #E7DCFF; color: #6D4BD8; } .badge.val { background: #D6F5E1; color: #15803D; }
+    .sites { display: inline-block; padding: 4px 12px; border-radius: 999px; background: var(--grey); font-family: 'Inter'; font-weight: 600; font-size: 13px; color: var(--slate-700); }
+    .price { font-family: 'Poppins'; font-weight: 700; font-size: 56px; line-height: 1; letter-spacing: -.03em; }
+    .per { font-size: 15px; color: var(--slate-500); margin-left: 6px; }
+    .was { display: inline-flex; align-items: center; gap: 10px; }
+    .was s { font-size: 18px; color: var(--slate-400); }
+    .chip { padding: 5px 11px; border-radius: 999px; background: #FEF3C7; color: #92400E; font-family: 'Inter'; font-weight: 700; font-size: 12px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 28px; border-radius: 999px; border: 1.5px solid var(--hair); background: #fff; font-family: 'Lato'; font-weight: 700; font-size: 16px; color: var(--slate-900); }
+    .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.dark { background: var(--ink); border-color: var(--ink); color: #fff; }
+    .inc { display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; }
+    .inc b { font-family: 'Poppins'; font-weight: 600; font-size: 15px; }
+    .inc > span { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; color: var(--slate-600); }
+    .tk { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--accent); color: #fff; }
+    .seal { flex-shrink: 0; width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(135deg, var(--accent), var(--blue)); color: #fff; text-align: center; line-height: 1; }
+    .seal b { display: block; font-family: 'Poppins'; font-size: 20px; } .seal small { font-family: 'Inter'; font-weight: 700; font-size: 8px; letter-spacing: .12em; }
+    .guar { display: flex; align-items: center; gap: 16px; }
+    .guar h4 { font-family: 'Poppins'; font-weight: 700; font-size: 18px; margin: 0; }
+    .guar p { margin: 4px 0 0; font-size: 14.5px; line-height: 1.55; color: var(--slate-600); }
+
+    /* 11. Site slider */
+    .v11 .panel { margin-top: 48px; border-radius: 30px; background: var(--soft); border: 1px solid var(--hair); padding: 52px 56px; }
+    .v11 .track { position: relative; height: 70px; margin: 0 40px; }
+    .v11 .line { position: absolute; left: 0; right: 0; top: 18px; height: 8px; border-radius: 999px; background: #E2E3E8; }
+    .v11 .fill { position: absolute; left: 0; width: 50%; top: 18px; height: 8px; border-radius: 999px; background: linear-gradient(90deg, var(--accent), var(--blue)); }
+    .v11 .stop { position: absolute; top: 0; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 12px; font-family: 'Poppins'; font-weight: 600; font-size: 15px; color: var(--slate-500); white-space: nowrap; }
+    .v11 .stop i { width: 22px; height: 22px; margin-top: 11px; border-radius: 50%; background: #fff; border: 3px solid #D4D4D8; }
+    .v11 .stop.done i { border-color: var(--accent); }
+    .v11 .stop.on { color: var(--accent); } .v11 .stop.on i { width: 44px; height: 44px; margin-top: 0; border: 0; background: var(--accent); box-shadow: 0 0 0 8px rgba(112,71,235,.18); }
+    .v11 .detail { margin-top: 44px; display: grid; grid-template-columns: 1fr 1fr auto; gap: 40px; align-items: center; background: #fff; border-radius: 22px; padding: 34px 38px; box-shadow: 0 20px 50px rgba(15,23,42,.06); }
+    .v11 .detail h3 { margin: 0; display: flex; gap: 10px; align-items: center; font-family: 'Poppins'; font-weight: 700; font-size: 24px; }
+    .v11 .detail .was { margin-top: 12px; }
+    .v11 .inc { margin-top: 28px; justify-content: center; }
+
+    /* 12. Big price left + order summary right */
+    .v12 { display: grid; grid-template-columns: 1fr 460px; gap: 64px; align-items: center; }
+    .v12 .from { margin-top: 32px; font-family: 'Inter'; font-size: 15px; color: var(--slate-500); }
+    .v12 .from b { display: block; margin-top: 6px; font-family: 'Poppins'; font-size: 96px; line-height: 1; letter-spacing: -.04em; color: var(--slate-900); }
+    .v12 .pills { margin-top: 26px; display: flex; gap: 10px; flex-wrap: wrap; }
+    .v12 .pills span { padding: 12px 18px; border-radius: 16px; border: 1px solid var(--hair); font-family: 'Inter'; font-size: 14px; color: var(--slate-700); }
+    .v12 .pills span b { display: block; font-family: 'Poppins'; font-size: 16px; color: var(--slate-900); }
+    .v12 .pills span.on { border: 2px solid var(--accent); background: var(--accent-soft); }
+    .v12 .sum { border-radius: 26px; background: #fff; border: 1px solid var(--hair); box-shadow: 0 40px 90px rgba(20,16,46,.12); padding: 34px; }
+    .v12 .sum h4 { margin: 0 0 20px; font-family: 'Poppins'; font-weight: 600; font-size: 18px; display: flex; justify-content: space-between; align-items: center; }
+    .v12 .li { display: flex; justify-content: space-between; padding: 14px 0; border-top: 1px solid #F0F0F3; font-size: 15.5px; color: var(--slate-700); }
+    .v12 .li.disc span:last-child { color: #15803D; font-weight: 700; }
+    .v12 .li.total { border-top: 2px dashed var(--hair); margin-top: 6px; padding-top: 18px; font-family: 'Poppins'; font-weight: 700; font-size: 22px; color: var(--slate-900); }
+    .v12 .sum .btn { width: 100%; margin-top: 18px; }
+    .v12 .sum .guar { margin-top: 20px; padding: 14px; border-radius: 16px; background: var(--soft); }
+    .v12 .sum .seal { width: 48px; height: 48px; } .v12 .sum .seal b { font-size: 16px; }
+
+    /* 13. Colour-header columns */
+    .v13 .cols { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .v13 .col { border-radius: 26px; overflow: hidden; border: 1px solid var(--hair); background: #fff; }
+    .v13 .head { padding: 32px; color: #fff; }
+    .v13 .c0 .head { background: linear-gradient(150deg, #8B5CF6, #6D28D9); }
+    .v13 .c1 .head { background: linear-gradient(150deg, #3B82F6, #1D4ED8); }
+    .v13 .c2 .head { background: linear-gradient(150deg, #14B8A6, #0F766E); }
+    .v13 .head .top { display: flex; justify-content: space-between; align-items: center; }
+    .v13 .head h3 { margin: 0; font-family: 'Poppins'; font-weight: 700; font-size: 22px; }
+    .v13 .head .badge { background: rgba(255,255,255,.22); color: #fff; }
+    .v13 .head .price { margin-top: 22px; } .v13 .head .per, .v13 .head s { color: rgba(255,255,255,.75); }
+    .v13 .head .was { margin-top: 12px; } .v13 .head .chip { background: #fff; color: var(--slate-900); }
+    .v13 .body { padding: 28px 32px 32px; }
+    .v13 .body .s { font-family: 'Poppins'; font-weight: 600; font-size: 16px; } .v13 .body ul { margin-top: 16px; display: grid; gap: 11px; }
+    .v13 .body li { display: flex; gap: 10px; align-items: center; font-size: 15px; color: var(--slate-700); }
+    .v13 .body .btn { width: 100%; margin-top: 24px; }
+    .v13 .guar { margin-top: 34px; justify-content: center; }
+
+    /* 14. Price medallions */
+    .v14 .row { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .v14 .m { text-align: center; padding: 40px 24px 34px; border-radius: 30px; background: var(--soft); }
+    .v14 .m.feat { background: var(--tint); }
+    .v14 .disc { position: relative; width: 210px; height: 210px; margin: 0 auto; border-radius: 50%; display: grid; place-items: center; background: #fff; box-shadow: 0 20px 50px rgba(15,23,42,.08), inset 0 0 0 10px var(--soft); }
+    .v14 .m.feat .disc { background: linear-gradient(150deg, #8A6BFF, var(--accent) 50%, var(--accent-deep)); color: #fff; box-shadow: 0 26px 60px rgba(112,71,235,.35), inset 0 0 0 10px rgba(255,255,255,.14); }
+    .v14 .disc .price { font-size: 52px; } .v14 .disc small { display: block; margin-top: 6px; font-size: 14px; color: var(--slate-500); }
+    .v14 .m.feat .disc small { color: rgba(255,255,255,.8); }
+    .v14 .disc .chip { position: absolute; top: 6px; right: 0; }
+    .v14 .m h3 { margin: 28px 0 0; font-family: 'Poppins'; font-weight: 700; font-size: 22px; display: flex; justify-content: center; gap: 10px; align-items: center; }
+    .v14 .m .w { margin-top: 10px; font-size: 15px; color: var(--slate-500); }
+    .v14 .m .btn { margin-top: 24px; }
+    .v14 .foot { margin-top: 34px; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+
+    /* 15. Fanned card deck */
+    .v15 .deck { position: relative; margin: 60px auto 0; height: 470px; max-width: 1160px; }
+    .v15 .card { position: absolute; top: 30px; width: 340px; padding: 38px 34px; border-radius: 28px; background: #fff; border: 1px solid var(--hair); box-shadow: 0 30px 70px rgba(20,16,46,.12); }
+    .v15 .card.l { left: 0; top: 44px; transform: rotate(-6deg); }
+    .v15 .card.r { right: 0; top: 44px; transform: rotate(6deg); }
+    .v15 .card.c { left: 50%; top: 0; transform: translateX(-50%); z-index: 2; background: var(--ink); color: #fff; border-color: var(--ink); box-shadow: 0 40px 90px rgba(20,16,46,.35); }
+    .v15 .card h3 { margin: 18px 0 0; font-family: 'Poppins'; font-weight: 700; font-size: 24px; }
+    .v15 .card .price { margin-top: 22px; } .v15 .card .was { margin: 12px 0 28px; }
+    .v15 .card .btn { width: 100%; }
+    .v15 .card.c .per, .v15 .card.c s { color: rgba(255,255,255,.6); } .v15 .card.c .sites { background: rgba(255,255,255,.12); color: #fff; }
+    .v15 .inc { justify-content: center; margin-top: 10px; } .v15 .guar { margin-top: 26px; justify-content: center; }
+
+    /* 16. Radio list + detail panel */
+    .v16 .box { margin-top: 48px; display: grid; grid-template-columns: 0.95fr 1.05fr; border-radius: 30px; overflow: hidden; border: 1px solid var(--hair); }
+    .v16 .list { padding: 40px; display: grid; gap: 14px; align-content: center; background: #fff; }
+    .v16 .opt-r { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; padding: 22px 24px; border-radius: 20px; border: 1.5px solid var(--hair); }
+    .v16 .opt-r.on { border-color: var(--accent); background: var(--accent-soft); }
+    .v16 .radio { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #C4C4CC; display: grid; place-items: center; }
+    .v16 .opt-r.on .radio { border-color: var(--accent); } .v16 .opt-r.on .radio::after { content: ''; width: 12px; height: 12px; border-radius: 50%; background: var(--accent); }
+    .v16 .opt-r b { display: flex; gap: 10px; align-items: center; font-family: 'Poppins'; font-weight: 600; font-size: 17px; }
+    .v16 .opt-r small { display: block; margin-top: 4px; font-size: 13.5px; color: var(--slate-500); }
+    .v16 .opt-r .p { font-family: 'Poppins'; font-weight: 700; font-size: 26px; text-align: right; }
+    .v16 .opt-r .p s { display: block; font-family: 'Lato'; font-weight: 400; font-size: 14px; color: var(--slate-400); }
+    .v16 .detail { padding: 52px; background: linear-gradient(160deg, #1E1442, var(--ink)); color: #fff; }
+    .v16 .detail h3 { margin: 18px 0 0; font-family: 'Poppins'; font-weight: 700; font-size: 26px; }
+    .v16 .detail .price { margin-top: 18px; font-size: 72px; } .v16 .detail .per { color: rgba(255,255,255,.6); }
+    .v16 .detail ul { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .v16 .detail li { display: flex; gap: 10px; align-items: center; font-size: 15px; color: rgba(255,255,255,.85); }
+    .v16 .detail .btn { width: 100%; margin-top: 30px; }
+    .v16 .detail .note { margin-top: 16px; text-align: center; font-size: 14px; color: rgba(255,255,255,.6); }
+
+    /* 17. Minimal typographic columns */
+    .v17 .cols { margin-top: 64px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--slate-900); }
+    .v17 .col { padding: 34px 36px 38px; } .v17 .col + .col { border-left: 1px solid var(--hair); }
+    .v17 .col .n { font-family: 'JetBrains Mono'; font-size: 13px; color: var(--slate-500); }
+    .v17 .col h3 { margin: 12px 0 0; font-family: 'Poppins'; font-weight: 600; font-size: 22px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .v17 .col .big { margin-top: 30px; font-family: 'Poppins'; font-weight: 700; font-size: 96px; line-height: .9; letter-spacing: -.05em; }
+    .v17 .col.feat .big { color: var(--accent); }
+    .v17 .col .w { margin-top: 14px; font-size: 15px; color: var(--slate-500); }
+    .v17 .col .w s { margin-right: 8px; }
+    .v17 .link { display: inline-flex; align-items: center; gap: 10px; margin-top: 30px; padding-bottom: 6px; border-bottom: 2px solid var(--slate-900); font-family: 'Poppins'; font-weight: 600; font-size: 16px; }
+    .v17 .col.feat .link { color: var(--accent); border-color: var(--accent); }
+    .v17 .foot { margin-top: 10px; padding-top: 26px; border-top: 1px solid var(--hair); display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+
+    /* 18. Receipt slips */
+    .v18 { background: var(--hero); border-radius: 32px; padding: 72px 56px 80px; }
+    .v18 .eyebrow { background: #fff; }
+    .v18 .slips { margin-top: 52px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 26px; align-items: start; }
+    .v18 .slip { position: relative; background: #fff; padding: 30px 30px 40px; font-family: 'JetBrains Mono', monospace; color: var(--slate-900); box-shadow: 0 20px 40px rgba(20,16,46,.12);
+      -webkit-mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 20px 100%; mask: conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) 50% / 20px 100%; }
+    .v18 .slip.feat { transform: translateY(-18px); }
+    .v18 .slip .hd { text-align: center; padding-bottom: 18px; border-bottom: 2px dashed #D4D4D8; }
+    .v18 .slip .hd b { display: block; font-size: 18px; font-weight: 600; } .v18 .slip .hd small { font-size: 12px; color: var(--slate-500); }
+    .v18 .slip .badge { margin-top: 10px; font-family: 'Inter'; }
+    .v18 .ln { display: flex; justify-content: space-between; padding: 9px 0; font-size: 14px; }
+    .v18 .ln.d { color: #15803D; }
+    .v18 .tot { margin-top: 8px; padding-top: 14px; border-top: 2px dashed #D4D4D8; display: flex; justify-content: space-between; align-items: baseline; font-weight: 600; }
+    .v18 .tot span:last-child { font-size: 30px; }
+    .v18 .slip .btn { width: 100%; margin-top: 22px; height: 48px; font-family: 'Lato'; }
+    .v18 .slip.feat .btn { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .v18 .bc { margin-top: 18px; height: 34px; background: repeating-linear-gradient(90deg, var(--slate-900) 0 2px, transparent 2px 4px, var(--slate-900) 4px 5px, transparent 5px 8px); opacity: .85; }
+    .v18 .foot { margin-top: 40px; display: flex; justify-content: space-between; align-items: center; gap: 30px; padding: 22px 28px; border-radius: 22px; background: #fff; }
+
+    /* 19. Site stacks */
+    .v19 .cards { margin-top: 56px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .v19 .card { border-radius: 26px; border: 1px solid var(--hair); background: #fff; overflow: hidden; }
+    .v19 .card.feat { border: 2px solid var(--accent); }
+    .v19 .vis { height: 170px; background: var(--soft); display: grid; place-items: center; padding: 20px; }
+    .v19 .card.feat .vis { background: var(--tint); }
+    .v19 .grid { display: grid; gap: 8px; }
+    .v19 .win { width: 46px; height: 34px; border-radius: 7px; background: #fff; border: 1px solid #E2E3E8; position: relative; box-shadow: 0 4px 10px rgba(15,23,42,.06); }
+    .v19 .win::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 8px; border-radius: 7px 7px 0 0; background: #E9E5FB; }
+    .v19 .card.feat .win::before { background: var(--accent); }
+    .v19 .g1 { grid-template-columns: 1fr; } .v19 .g1 .win { width: 120px; height: 86px; }
+    .v19 .g3 { grid-template-columns: repeat(3, 1fr); } .v19 .g3 .win { width: 70px; height: 52px; }
+    .v19 .g10 { grid-template-columns: repeat(5, 1fr); }
+    .v19 .bd { padding: 30px 32px 32px; }
+    .v19 .bd .top { display: flex; justify-content: space-between; align-items: center; }
+    .v19 .bd h3 { margin: 0; font-family: 'Poppins'; font-weight: 700; font-size: 22px; }
+    .v19 .bd .price { margin-top: 18px; font-size: 50px; } .v19 .bd .was { margin: 10px 0 24px; } .v19 .bd .btn { width: 100%; }
+    .v19 .card.feat .btn { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .v19 .foot { margin-top: 36px; display: flex; justify-content: space-between; align-items: center; gap: 30px; }
+
+    /* 20. POS terminal */
+    .v20 { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 64px; align-items: center; }
+    .v20 .h2 { font-size: 46px; }
+    .v20 .incl { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px 18px; }
+    .v20 .incl > span { display: flex; align-items: center; gap: 10px; font-size: 16px; color: var(--slate-700); }
+    .v20 .incl .tk { width: 20px; height: 20px; }
+    .v20 .term { position: relative; }
+    .v20 .screen { border: 16px solid var(--ink); border-radius: 34px; background: #fff; overflow: hidden; box-shadow: 0 40px 90px rgba(20,16,46,.25); }
+    .v20 .sbar { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; background: #1E1442; color: #fff; font-family: 'Inter'; font-weight: 600; font-size: 14px; }
+    .v20 .sbar span:last-child { font-weight: 500; color: rgba(255,255,255,.7); }
+    .v20 .sbody { display: grid; grid-template-columns: 1.1fr 0.9fr; }
+    .v20 .keys { padding: 22px; display: grid; gap: 12px; background: var(--soft); }
+    .v20 .key { padding: 18px 20px; border-radius: 16px; background: #fff; border: 1.5px solid var(--hair); }
+    .v20 .key.on { border-color: var(--accent); background: var(--accent-soft); }
+    .v20 .key b { display: flex; justify-content: space-between; font-family: 'Poppins'; font-weight: 600; font-size: 16px; }
+    .v20 .key small { display: flex; justify-content: space-between; margin-top: 6px; font-size: 13px; color: var(--slate-500); }
+    .v20 .cart { padding: 24px; display: flex; flex-direction: column; font-family: 'Inter'; }
+    .v20 .cart h5 { margin: 0 0 14px; font-size: 13px; letter-spacing: .02em; color: var(--slate-500); font-weight: 600; }
+    .v20 .cart .ln { display: flex; justify-content: space-between; padding: 9px 0; font-size: 14px; color: var(--slate-700); border-bottom: 1px solid #F0F0F3; }
+    .v20 .cart .ln.d span:last-child { color: #15803D; font-weight: 600; }
+    .v20 .cart .tot { margin-top: auto; padding-top: 16px; display: flex; justify-content: space-between; align-items: baseline; font-family: 'Poppins'; font-weight: 700; }
+    .v20 .cart .tot span:last-child { font-size: 34px; }
+    .v20 .cart .btn { width: 100%; margin-top: 14px; height: 50px; }
+    .v20 .stand { width: 34%; height: 22px; margin: 0 auto; background: linear-gradient(#2A2833, #141317); border-radius: 0 0 14px 14px; }
+    .v20 .slip { position: absolute; right: -24px; bottom: -46px; width: 220px; padding: 16px 18px; background: #fff; border-radius: 6px; box-shadow: 0 20px 40px rgba(20,16,46,.18); transform: rotate(4deg); font-family: 'JetBrains Mono'; font-size: 12px; color: var(--slate-700); }
+    .v20 .slip b { display: block; font-size: 13px; color: var(--slate-900); margin-bottom: 4px; }
+  </style>
+</head>
+<body>
+  <section class="opt" id="o11"><div class="opt-label"><b>11</b> Site slider (1 · 3 · 10) · selected plan detail strip · includes</div>
+    <div class="wrap v11"><div class="center" data-head></div>
+      <div class="panel"><div class="track"><span class="line"></span><span class="fill"></span>
+        <span class="stop done" style="left:0"><i></i>1 site</span><span class="stop on" style="left:50%"><i></i>3 sites</span><span class="stop" style="left:100%"><i></i>10 sites</span></div>
+        <div class="detail" data-r="v11"></div><div class="inc" data-r="inc"></div></div></div></section>
+
+  <section class="opt" id="o12"><div class="opt-label"><b>12</b> Big "from" price + plan pills left · checkout-style order summary right</div>
+    <div class="wrap v12"><div><div data-head></div><div class="from">Lifetime plans from<b>$299</b></div><div class="pills" data-r="pills12"></div></div><div class="sum" data-r="sum"></div></div></section>
+
+  <section class="opt" id="o13"><div class="opt-label"><b>13</b> Tall columns with coloured gradient headers · includes list in each</div>
+    <div class="wrap v13"><div class="center" data-head></div><div class="cols" data-r="v13"></div><div class="guar" data-r="guar"></div></div></section>
+
+  <section class="opt" id="o14"><div class="opt-label"><b>14</b> Price medallions · Professional disc in brand gradient</div>
+    <div class="wrap v14"><div class="center" data-head></div><div class="row" data-r="v14"></div><div class="foot"><div class="inc" data-r="inc"></div><div class="guar" data-r="guar"></div></div></div></section>
+
+  <section class="opt" id="o15"><div class="opt-label"><b>15</b> Fanned card deck · Professional front and centre</div>
+    <div class="wrap v15"><div class="center" data-head></div><div class="deck" data-r="v15"></div><div class="inc" data-r="inc"></div><div class="guar" data-r="guar"></div></div></section>
+
+  <section class="opt" id="o16"><div class="opt-label"><b>16</b> Radio-button plan picker · dark detail panel for the selected plan</div>
+    <div class="wrap v16"><div class="center" data-head></div><div class="box"><div class="list" data-r="radios"></div><div class="detail" data-r="detail16"></div></div></div></section>
+
+  <section class="opt" id="o17"><div class="opt-label"><b>17</b> Minimal type · no cards · huge numbers · underline links</div>
+    <div class="wrap v17"><div data-head></div><div class="cols" data-r="v17"></div><div class="foot"><div class="inc" data-r="inc"></div><div class="guar" data-r="guar"></div></div></div></section>
+
+  <section class="opt" id="o18"><div class="opt-label"><b>18</b> POS receipt slips · line items + total · zig-zag tear edge</div>
+    <div class="wrap v18"><div class="center" data-head></div><div class="slips" data-r="v18"></div><div class="foot"><div class="inc" data-r="inc"></div><div class="guar" data-r="guar"></div></div></div></section>
+
+  <section class="opt" id="o19"><div class="opt-label"><b>19</b> Site stacks · each card shows its sites as windows</div>
+    <div class="wrap v19"><div class="center" data-head></div><div class="cards" data-r="v19"></div><div class="foot"><div class="inc" data-r="inc"></div><div class="guar" data-r="guar"></div></div></div></section>
+
+  <section class="opt" id="o20"><div class="opt-label"><b>20</b> POS terminal · plans as register keys · cart total + receipt</div>
+    <div class="wrap v20"><div><div data-head></div><div class="incl" data-r="incGrid"></div></div>
+      <div class="term"><div class="screen"><div class="sbar"><span>wePOS · Lifetime plans</span><span>Counter 1</span></div><div class="sbody"><div class="keys" data-r="keys"></div><div class="cart" data-r="cart"></div></div></div><div class="stand"></div>
+        <div class="slip"><b>14-day money-back</b>Refund within 14 days.<br>No questions asked.</div></div></div></section>
+
+  <script>
+    const PLANS = [
+      { n: "Starter", s: "1 site", sites: 1, p: 299, w: 599 },
+      { n: "Professional", s: "3 sites", sites: 3, p: 399, w: 799, badge: ["pop", "Most Popular"], feat: true },
+      { n: "Business", s: "10 sites", sites: 10, p: 599, w: 1199, badge: ["val", "Best Valued"] },
+    ];
+    const INC = ["Dokan vendor POS", "Outlets", "Cashiers", "Reports", "Barcode tools", "Ticket support"];
+    const $ = (n) => "$" + n.toLocaleString("en-US");
+    const ARROW = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+    const CHECK = '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+    const tk = `<span class="tk">${CHECK}</span>`;
+    const badge = (p) => p.badge ? `<span class="badge ${p.badge[0]}">${p.badge[1]}</span>` : "";
+    const price = (p) => `<div><span class="price">${$(p.p)}</span><span class="per">one-time</span></div>`;
+    const was = (p) => `<div class="was"><s>${$(p.w)}</s><span class="chip">50% OFF</span></div>`;
+    const buy = (cls = "") => `<span class="btn ${cls}">Buy Now ${ARROW}</span>`;
+    const seal = `<div class="seal"><span><b>14</b><small>DAYS</small></span></div>`;
+    const PRO = PLANS[1];
+
+    const R = {
+      inc: () => `<b>All plans include</b>` + INC.map((x) => `<span>${tk}${x}</span>`).join(""),
+      incGrid: () => INC.map((x) => `<span>${tk}${x}</span>`).join(""),
+      guar: () => seal + `<div><h4>Try it for 14 days, risk free</h4><p>If wePOS isn't right for your marketplace, ask for a refund within 14 days. No questions asked.</p></div>`,
+      v11: () => `<div><h3>${PRO.n}${badge(PRO)}</h3>${was(PRO)}</div>${price(PRO)}${buy("solid")}`,
+      pills12: () => PLANS.map((p) => `<span class="${p.feat ? "on" : ""}"><b>${p.n}</b>${p.s} · ${$(p.p)}</span>`).join(""),
+      sum: () => `<h4>Order summary ${badge(PRO)}</h4><div class="li"><span>${PRO.n} · ${PRO.s}</span><span>${$(PRO.w)}</span></div><div class="li disc"><span>Lifetime deal · 50% off</span><span>−${$(PRO.w - PRO.p)}</span></div><div class="li"><span>Renewal</span><span>None, one-time</span></div><div class="li total"><span>Total</span><span>${$(PRO.p)}</span></div>${buy("solid")}<div class="guar">${seal}<div><p style="margin:0">14-day money-back guarantee. No questions asked.</p></div></div>`,
+      v13: () => PLANS.map((p, i) => `<div class="col c${i}"><div class="head"><div class="top"><h3>${p.n}</h3>${badge(p)}</div>${price(p)}${was(p)}</div><div class="body"><div class="s">${p.s} · every feature</div><ul>${INC.map((x) => `<li>${tk}${x}</li>`).join("")}</ul>${buy(p.feat ? "solid" : "")}</div></div>`).join(""),
+      v14: () => PLANS.map((p) => `<div class="m ${p.feat ? "feat" : ""}"><div class="disc"><span class="chip">50% OFF</span><div><span class="price">${$(p.p)}</span><small>one-time</small></div></div><h3>${p.n}<span class="sites">${p.s}</span></h3>${p.badge ? `<div style="margin-top:10px">${badge(p)}</div>` : ""}<div class="w">Was <s>${$(p.w)}</s></div>${buy(p.feat ? "solid" : "")}</div>`).join(""),
+      v15: () => { const pos = ["l", "c", "r"]; return PLANS.map((p, i) => `<div class="card ${pos[i]}">${badge(p) || `<span class="sites">${p.s}</span>`}<h3>${p.n}${p.badge ? ` <span class="sites">${p.s}</span>` : ""}</h3>${price(p)}${was(p)}${buy(p.feat ? "solid" : "")}</div>`).join(""); },
+      radios: () => PLANS.map((p) => `<div class="opt-r ${p.feat ? "on" : ""}"><span class="radio"></span><div><b>${p.n}${badge(p)}</b><small>${p.s} · lifetime license</small></div><div class="p">${$(p.p)}<s>${$(p.w)}</s></div></div>`).join(""),
+      detail16: () => `${badge(PRO)}<h3>${PRO.n} · ${PRO.s}</h3><div><span class="price">${$(PRO.p)}</span><span class="per">one-time · 50% off ${$(PRO.w)}</span></div><ul>${INC.map((x) => `<li>${tk}${x}</li>`).join("")}</ul>${buy("solid")}<div class="note">14-day money-back guarantee · No questions asked</div>`,
+      v17: () => PLANS.map((p, i) => `<div class="col ${p.feat ? "feat" : ""}"><span class="n">0${i + 1} / ${p.s}</span><h3>${p.n}${badge(p)}</h3><div class="big">${$(p.p)}</div><div class="w"><s>${$(p.w)}</s>one-time · 50% off</div><span class="link">Buy ${p.n} ${ARROW}</span></div>`).join(""),
+      v18: () => PLANS.map((p) => `<div class="slip ${p.feat ? "feat" : ""}"><div class="hd"><b>wePOS ${p.n.toUpperCase()}</b><small>Lifetime license · ${p.s}</small>${p.badge ? `<div>${badge(p)}</div>` : ""}</div><div class="ln"><span>${p.s}</span><span>${$(p.w)}</span></div><div class="ln d"><span>50% off</span><span>−${$(p.w - p.p)}</span></div><div class="ln"><span>Renewal</span><span>$0</span></div><div class="tot"><span>TOTAL</span><span>${$(p.p)}</span></div>${buy()}<div class="bc"></div></div>`).join(""),
+      v19: () => PLANS.map((p) => { const g = p.sites === 1 ? "g1" : p.sites === 3 ? "g3" : "g10"; return `<div class="card ${p.feat ? "feat" : ""}"><div class="vis"><div class="grid ${g}">${'<span class="win"></span>'.repeat(p.sites)}</div></div><div class="bd"><div class="top"><h3>${p.n}</h3>${badge(p) || `<span class="sites">${p.s}</span>`}</div>${p.badge ? `<div style="margin-top:10px"><span class="sites">${p.s}</span></div>` : ""}${price(p)}${was(p)}${buy()}</div></div>`; }).join(""),
+      keys: () => PLANS.map((p) => `<div class="key ${p.feat ? "on" : ""}"><b><span>${p.n}</span><span>${$(p.p)}</span></b><small><span>${p.s}</span><s>${$(p.w)}</s></small></div>`).join(""),
+      cart: () => `<h5>Current sale</h5><div class="ln"><span>${PRO.n} (${PRO.s})</span><span>${$(PRO.w)}</span></div><div class="ln d"><span>Discount 50%</span><span>−${$(PRO.w - PRO.p)}</span></div><div class="ln"><span>Renewal</span><span>$0</span></div><div class="tot"><span>Total</span><span>${$(PRO.p)}</span></div>${buy("solid")}`,
+    };
+    document.querySelectorAll("[data-head]").forEach((el) => {
+      el.innerHTML = `<span class="eyebrow">Lifetime plans · 50% off</span><h2 class="h2">Pay once. Run your counters for life.</h2><p class="lead">Every lifetime plan includes every feature. Pick by how many sites you run.</p>`;
+    });
+    document.querySelectorAll("[data-r]").forEach((el) => { el.innerHTML = R[el.dataset.r](); });
+    const only = new URLSearchParams(location.search).get("only");
+    if (only) { document.body.classList.add("single"); document.querySelectorAll(".opt").forEach((s) => { if (s.id !== "o" + only) s.remove(); }); }
+  </script>
+</body>
+</html>

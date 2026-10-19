@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Control Section Options — wePOS for Dokan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lato:wght@400;700&family=Poppins:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Design preview only (not part of the site build). Same tokens as the For Dokan page. */
+    :root {
+      --accent: #7047EB; --accent-deep: #5C32D4; --accent-soft: #F3F0FD; --blue: #2A5AFA;
+      --ink: #141317; --slate-900: #0F172A; --slate-600: #475569; --slate-500: #64748B;
+      --hair: #E7E7EA; --soft: #F7F7FA; --hero: #D7D9E2; --green: #00C950;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fff; color: var(--slate-900); font-family: 'Lato', sans-serif; -webkit-font-smoothing: antialiased; }
+    img { display: block; max-width: 100%; height: auto; }
+    .opt { padding: 56px 24px 96px; border-top: 1px dashed #D4D4D8; }
+    .opt:first-of-type { border-top: 0; }
+    .opt-label { max-width: 1272px; margin: 0 auto 28px; display: flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 14px; color: #52525B; }
+    .opt-label b { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: #fff; font-weight: 500; }
+    .wrap { max-width: 1272px; margin: 0 auto; }
+    body.single .opt { border: 0; padding-top: 40px; }
+
+    /* shared bits */
+    .tag { display: inline-flex; align-items: center; gap: 8px; border-radius: 999px; padding: 8px 16px; font-family: 'Inter'; font-weight: 600; font-size: 13px; }
+    .tag .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(0,201,80,.18); }
+    .tag.dark { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.14); color: #CFC5F8; }
+    .tag.light { background: var(--accent-soft); color: #4A3B8C; }
+    .tag.white { background: #fff; color: #4A3B8C; border: 1px solid var(--hair); }
+    h2 { font-family: 'Poppins'; font-weight: 700; letter-spacing: -.02em; line-height: 1.12; margin: 20px 0 0; }
+    .lead { font-size: 18px; line-height: 1.6; margin: 16px 0 0; }
+    .check { flex-shrink: 0; width: 22px; height: 22px; border-radius: 50%; background: var(--accent); color: #fff; display: grid; place-items: center; }
+    .shot { background: #fff; border-radius: 20px; padding: 18px; box-shadow: 0 30px 70px rgba(20,16,46,.18); }
+    .rules { list-style: none; margin: 0; padding: 0; }
+
+    /* ── 1. Light split, gradient image panel ── */
+    .v1 { background: var(--soft); border-radius: 32px; padding: 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+    .v1 h2 { font-size: 46px; }
+    .v1 .lead { color: var(--slate-600); }
+    .v1 .rules { margin-top: 30px; display: grid; gap: 16px; }
+    .v1 .rules li { display: flex; gap: 14px; font-size: 16px; line-height: 1.55; color: var(--slate-600); }
+    .v1 .rules b { color: var(--slate-900); }
+    .v1-panel { position: relative; min-height: 520px; border-radius: 28px; background: linear-gradient(150deg, var(--accent) 0%, #5B3FE0 50%, var(--blue) 100%); overflow: hidden; }
+    .v1-panel::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,.18) 1.2px, transparent 1.2px); background-size: 22px 22px; }
+    .v1-panel .a { position: absolute; left: 36px; top: 48px; width: 70%; transform: rotate(-3deg); }
+    .v1-panel .b { position: absolute; right: 30px; bottom: 36px; width: 44%; transform: rotate(4deg); }
+
+    /* ── 2. Dark, centered head + 3x2 rule cards + image strip ── */
+    .v2 { background: var(--ink); border-radius: 32px; padding: 80px 64px 0; color: #fff; text-align: center; overflow: hidden; position: relative; }
+    .v2::before { content: ''; position: absolute; left: 50%; top: -260px; width: 820px; height: 520px; transform: translateX(-50%); background: radial-gradient(closest-side, rgba(112,71,235,.45), transparent 70%); }
+    .v2 > * { position: relative; }
+    .v2 h2 { font-size: 48px; }
+    .v2 .lead { color: rgba(255,255,255,.66); max-width: 52ch; margin-left: auto; margin-right: auto; }
+    .v2 .rules { margin-top: 52px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; text-align: left; }
+    .v2 .rules li { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.10); border-radius: 18px; padding: 24px; }
+    .v2 .rules .n { font-family: 'JetBrains Mono'; font-size: 13px; color: #9F86F5; }
+    .v2 .rules b { display: block; margin-top: 10px; font-family: 'Poppins'; font-weight: 600; font-size: 17px; }
+    .v2 .rules span { display: block; margin-top: 6px; font-size: 14.5px; line-height: 1.55; color: rgba(255,255,255,.6); }
+    .v2-strip { margin: 56px auto 0; max-width: 900px; display: grid; grid-template-columns: 1.6fr 1fr; gap: 18px; align-items: end; }
+    .v2-strip .shot { border-radius: 20px 20px 0 0; padding-bottom: 0; box-shadow: none; }
+    .v2-strip .shot img { margin-bottom: -2px; }
+
+    /* ── 3. Bento: head tile, two image tiles, rules row ── */
+    .v3 { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+    .v3 .t { border-radius: 28px; padding: 44px; position: relative; overflow: hidden; }
+    .v3 .head { grid-column: span 6; background: var(--ink); color: #fff; }
+    .v3 .head h2 { font-size: 44px; }
+    .v3 .head .lead { color: rgba(255,255,255,.66); }
+    .v3 .head::after { content: ''; position: absolute; right: -120px; bottom: -160px; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(closest-side, rgba(112,71,235,.55), transparent 70%); }
+    .v3 .img1 { grid-column: span 3; background: var(--accent-soft); display: flex; align-items: center; justify-content: center; padding: 28px; }
+    .v3 .img2 { grid-column: span 3; background: #ECEEF0; display: flex; align-items: center; justify-content: center; padding: 28px; }
+    .v3 .img1 .shot, .v3 .img2 .shot { box-shadow: 0 18px 40px rgba(20,16,46,.10); }
+    .v3 .rule { grid-column: span 4; background: #F5F5F7; border: 1px solid #ECECEF; padding: 30px; }
+    .v3 .rule .check { margin-bottom: 16px; }
+    .v3 .rule b { display: block; font-family: 'Poppins'; font-weight: 600; font-size: 17px; }
+    .v3 .rule > span:not(.check) { display: block; margin-top: 6px; font-size: 15px; line-height: 1.55; color: var(--slate-600); }
+
+    /* ── 4. Image card left, numbered list right (white) ── */
+    .v4 { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .v4-visual { position: relative; min-height: 600px; border-radius: 32px; background: var(--hero); overflow: hidden; }
+    .v4-visual .a { position: absolute; left: 40px; top: 56px; width: 72%; }
+    .v4-visual .b { position: absolute; right: 40px; bottom: 48px; width: 46%; }
+    .v4-visual .badge { position: absolute; left: 40px; bottom: 48px; display: flex; align-items: center; gap: 10px; background: #fff; border-radius: 14px; padding: 14px 18px; font-family: 'Inter'; font-weight: 600; font-size: 14px; box-shadow: 0 16px 36px rgba(20,16,46,.12); }
+    .v4 h2 { font-size: 46px; }
+    .v4 .lead { color: var(--slate-600); }
+    .v4 .rules { margin-top: 30px; }
+    .v4 .rules li { display: grid; grid-template-columns: 52px 1fr; padding: 18px 0; border-top: 1px solid var(--hair); }
+    .v4 .rules li:last-child { border-bottom: 1px solid var(--hair); }
+    .v4 .rules .n { font-family: 'JetBrains Mono'; font-size: 14px; color: var(--accent); padding-top: 2px; }
+    .v4 .rules b { display: block; font-family: 'Poppins'; font-weight: 600; font-size: 17px; }
+    .v4 .rules span { display: block; margin-top: 4px; font-size: 15px; line-height: 1.55; color: var(--slate-600); }
+
+    /* ── 5. Tab-style list with active rule + preview panel ── */
+    .v5 { background: var(--soft); border-radius: 32px; padding: 72px; }
+    .v5-head { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: end; }
+    .v5-head h2 { font-size: 46px; }
+    .v5-head .lead { color: var(--slate-600); margin: 0; }
+    .v5-body { margin-top: 52px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 28px; align-items: stretch; }
+    .v5 .rules { display: grid; gap: 10px; }
+    .v5 .rules li { display: flex; gap: 14px; align-items: flex-start; padding: 18px 20px; border-radius: 16px; background: #fff; border: 1px solid var(--hair); }
+    .v5 .rules li.on { background: var(--accent); border-color: var(--accent); color: #fff; box-shadow: 0 18px 40px rgba(112,71,235,.28); }
+    .v5 .rules li.on .check { background: #fff; color: var(--accent); }
+    .v5 .rules b { display: block; font-family: 'Poppins'; font-weight: 600; font-size: 16px; }
+    .v5 .rules li div span { display: block; margin-top: 4px; font-size: 14.5px; line-height: 1.5; color: var(--slate-600); }
+    .v5 .rules li.on div span { color: rgba(255,255,255,.85); }
+    .v5 .rules li:not(.on) div span { display: none; }
+    .v5 .rules li:not(.on) .check { background: var(--accent-soft); color: var(--accent); }
+    .v5 .rules li { align-items: center; }
+    .v5 .rules li.on { align-items: flex-start; }
+    .v5-panel { position: relative; border-radius: 24px; background: var(--ink); overflow: hidden; display: grid; place-items: center; padding: 48px; }
+    .v5-panel::before { content: ''; position: absolute; right: -160px; top: -160px; width: 480px; height: 480px; background: radial-gradient(closest-side, rgba(112,71,235,.5), transparent 70%); }
+    .v5-panel .shot { position: relative; width: 82%; }
+
+    /* ── 6. Dark full-bleed, split header, centered visual, 2-col checklist ── */
+    .v6 { background: radial-gradient(900px 500px at 50% 0%, #2A1F5C 0%, var(--ink) 60%); border-radius: 32px; padding: 80px 72px; color: #fff; }
+    .v6-head { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 64px; align-items: end; }
+    .v6-head h2 { font-size: 52px; }
+    .v6-head .lead { color: rgba(255,255,255,.66); margin: 0; }
+    .v6-visual { position: relative; margin: 56px auto 0; max-width: 860px; height: 380px; }
+    .v6-visual .a { position: absolute; left: 0; top: 0; width: 62%; }
+    .v6-visual .b { position: absolute; right: 0; top: 40px; width: 34%; }
+    .v6-visual .chip { position: absolute; z-index: 3; display: flex; align-items: center; gap: 10px; background: #221B44; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 12px 30px rgba(0,0,0,.35); border-radius: 999px; padding: 10px 16px; font-family: 'Inter'; font-weight: 600; font-size: 13.5px; }
+    .v6-visual .c1 { left: 56%; top: -18px; } .v6-visual .c2 { left: -24px; bottom: -22px; } .v6-visual .c3 { right: -14px; bottom: -6px; }
+    .v6 .rules { margin-top: 56px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 56px; border-top: 1px solid rgba(255,255,255,.12); }
+    .v6 .rules li { display: flex; gap: 14px; padding: 20px 0; border-bottom: 1px solid rgba(255,255,255,.12); font-size: 16px; line-height: 1.55; color: rgba(255,255,255,.66); }
+    .v6 .rules b { color: #fff; }
+  </style>
+</head>
+<body>
+  <!-- Option 1 -->
+  <section class="opt" id="o1">
+    <div class="opt-label"><b>1</b> Light split · gradient image panel</div>
+    <div class="wrap v1">
+      <div>
+        <span class="tag light"><span class="dot"></span>Admin control</span>
+        <h2>Your marketplace, your rules</h2>
+        <p class="lead">Vendors get their own POS. You still decide who can use it and what they can do.</p>
+        <ul class="rules" data-rules="check"></ul>
+      </div>
+      <div class="v1-panel">
+        <div class="shot a"><img src="/src/assets/cashier-assignment.png" alt=""></div>
+        <div class="shot b"><img src="/src/assets/secure-login.png" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Option 2 -->
+  <section class="opt" id="o2">
+    <div class="opt-label"><b>2</b> Dark · centered heading · 3×2 rule cards · image strip</div>
+    <div class="wrap v2">
+      <span class="tag dark"><span class="dot"></span>Admin control</span>
+      <h2>Your marketplace, your rules</h2>
+      <p class="lead">Vendors get their own POS. You still decide who can use it and what they can do.</p>
+      <ul class="rules" data-rules="cards"></ul>
+      <div class="v2-strip">
+        <div class="shot"><img src="/src/assets/cashier-assignment.png" alt=""></div>
+        <div class="shot"><img src="/src/assets/secure-login.png" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Option 3 -->
+  <section class="opt" id="o3">
+    <div class="opt-label"><b>3</b> Bento · heading tile · two image tiles · six rule tiles</div>
+    <div class="wrap v3">
+      <div class="t head">
+        <span class="tag dark"><span class="dot"></span>Admin control</span>
+        <h2>Your marketplace, your rules</h2>
+        <p class="lead">Vendors get their own POS. You still decide who can use it and what they can do.</p>
+      </div>
+      <div class="t img1"><div class="shot"><img src="/src/assets/cashier-assignment.png" alt=""></div></div>
+      <div class="t img2"><div class="shot"><img src="/src/assets/secure-login.png" alt=""></div></div>
+      <div data-rules="tiles" style="display:contents"></div>
+    </div>
+  </section>
+
+  <!-- Option 4 -->
+  <section class="opt" id="o4">
+    <div class="opt-label"><b>4</b> White · image card left · numbered list right</div>
+    <div class="wrap v4">
+      <div class="v4-visual">
+        <div class="shot a"><img src="/src/assets/cashier-assignment.png" alt=""></div>
+        <div class="shot b"><img src="/src/assets/secure-login.png" alt=""></div>
+        <div class="badge"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Enforced on the server</div>
+      </div>
+      <div>
+        <span class="tag light"><span class="dot"></span>Admin control</span>
+        <h2>Your marketplace, your rules</h2>
+        <p class="lead">Vendors get their own POS. You still decide who can use it and what they can do.</p>
+        <ul class="rules" data-rules="numbered"></ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Option 5 -->
+  <section class="opt" id="o5">
+    <div class="opt-label"><b>5</b> Soft grey · split header · tab-style rules with live preview</div>
+    <div class="wrap v5">
+      <div class="v5-head">
+        <div>
+          <span class="tag white"><span class="dot"></span>Admin control</span>
+          <h2>Your marketplace, your rules</h2>
+        </div>
+        <p class="lead">Vendors get their own POS. You still decide who can use it and what they can do.</p>
+      </div>
+      <div class="v5-body">
+        <ul class="rules" data-rules="tabs"></ul>
+        <div class="v5-panel"><div class="shot"><img src="/src/assets/cashier-assignment.png" alt=""></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Option 6 -->
+  <section class="opt" id="o6">
+    <div class="opt-label"><b>6</b> Dark glow · split header · centered visual with chips · two-column checklist</div>
+    <div class="wrap v6">
+      <div class="v6-head">
+        <div>
+          <span class="tag dark"><span class="dot"></span>Admin control</span>
+          <h2>Your marketplace, your rules</h2>
+        </div>
+        <p class="lead">Vendors get their own POS. You still decide who can use it and what they can do.</p>
+      </div>
+      <div class="v6-visual">
+        <div class="shot a"><img src="/src/assets/cashier-assignment.png" alt=""></div>
+        <div class="shot b"><img src="/src/assets/secure-login.png" alt=""></div>
+        <span class="chip c1"><span class="tag-dot" style="width:8px;height:8px;border-radius:50%;background:#00C950"></span>Cashier role</span>
+        <span class="chip c2">One access matrix</span>
+        <span class="chip c3">Server-side rules</span>
+      </div>
+      <ul class="rules" data-rules="check"></ul>
+    </div>
+  </section>
+
+  <script>
+    const RULES = [
+      ["One access matrix for vendors.", "Set what vendors can see and do in the POS from a single screen."],
+      ["Vendors manage their own team.", "Each vendor sets permissions for their cashiers and staff, and can never grant more than they have."],
+      ["Outlets stay with their owner.", "Vendors can only edit and staff their own outlets."],
+      ["Permissions enforced on the server.", "Rules hold even if someone tries to work around the screen."],
+      ["Dedicated cashier role.", "Give counter staff only what they need."],
+      ["Bulk cashier assignment.", "Set up a whole team in one go."],
+    ];
+    const CHECK = '<span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>';
+    const n = (i) => String(i + 1).padStart(2, "0");
+    const render = {
+      check: (r) => `<li>${CHECK}<span><b>${r[0]}</b> ${r[1]}</span></li>`,
+      cards: (r, i) => `<li><span class="n">${n(i)}</span><b>${r[0].replace(/\.$/, "")}</b><span>${r[1]}</span></li>`,
+      tiles: (r) => `<div class="t rule">${CHECK}<b>${r[0].replace(/\.$/, "")}</b><span>${r[1]}</span></div>`,
+      numbered: (r, i) => `<li><span class="n">${n(i)}</span><div><b>${r[0].replace(/\.$/, "")}</b><span>${r[1]}</span></div></li>`,
+      tabs: (r, i) => `<li class="${i === 0 ? "on" : ""}">${CHECK}<div><b>${r[0].replace(/\.$/, "")}</b><span>${r[1]}</span></div></li>`,
+    };
+    document.querySelectorAll("[data-rules]").forEach((el) => {
+      el.innerHTML = RULES.map((r, i) => render[el.dataset.rules](r, i)).join("");
+    });
+    // ?only=3 shows a single option (used to export one image per option)
+    const only = new URLSearchParams(location.search).get("only");
+    if (only) {
+      document.body.classList.add("single");
+      document.querySelectorAll(".opt").forEach((s) => { if (s.id !== "o" + only) s.remove(); });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+  .faq-layout { display: grid; grid-template-columns: 260px 1fr; gap: 56px; margin-top: 56px; align-items: start; }
+  .faq-side { position: sticky; top: 40px; display: flex; flex-direction: column; gap: 6px; }
+  .faq-side button { text-align: left; padding: 14px 18px; border-radius: 12px; font-family: 'Lato'; font-weight: 700; font-size: 16px; color: var(--c-slate-600); transition: all .15s; }
+  .faq-side button.active { background: var(--c-purple-bg); color: var(--c-purple); }
+  .faq-side button:hover { color: var(--c-purple); }
+  .faq-list { display: flex; flex-direction: column; gap: 14px; }
+  .faq-cat-title { font-family: 'Poppins'; font-weight: 700; font-size: 26px; color: var(--c-slate-900); margin: 0 0 22px; }
+  .faq-item { border: 1px solid var(--c-slate-200); border-radius: 16px; overflow: hidden; background: #fff; transition: box-shadow .2s; }
+  .faq-item.open { box-shadow: 0 16px 40px rgba(15,23,42,0.06); border-color: var(--c-purple-soft); }
+  .faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 24px 28px; font-family: 'Poppins'; font-weight: 600; font-size: 18px; color: var(--c-slate-900); text-align: left; }
+  .faq-q .ic { flex-shrink: 0; width: 30px; height: 30px; border-radius: 999px; background: var(--c-slate-100); color: var(--c-slate-600); display: grid; place-items: center; transition: all .2s; }
+  .faq-item.open .faq-q .ic { background: var(--c-purple); color: #fff; transform: rotate(45deg); }
+  .faq-a { max-height: 0; overflow: hidden; transition: max-height .25s ease; }
+  .faq-a-inner { padding: 0 28px 26px; font-family: 'Lato'; font-size: 16px; line-height: 1.6; color: var(--c-slate-600); }
+  .faq-help { margin-top: 70px; text-align: center; background: var(--c-purple-bg); border-radius: 28px; padding: 64px; }
+  .faq-help h3 { font-family: 'Poppins'; font-weight: 700; font-size: 32px; color: var(--c-slate-900); margin: 0 0 12px; }
+  .faq-help p { font-family: 'Lato'; font-size: 18px; color: var(--c-slate-600); margin: 0 0 32px; }

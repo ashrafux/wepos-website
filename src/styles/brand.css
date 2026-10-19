@@ -1,0 +1,4 @@
+/* Header logos (shared by every page's header) */
+.nav-brand-mark, .nav-brand-wordmark { display: block; line-height: 0; flex-shrink: 0; }
+.nav-brand-mark img { display: block; width: 52px; height: 52px; }
+.nav-brand-wordmark img { display: block; width: 96px; height: 42px; }
