@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { RollText, RollIcon } from "../components/roll.jsx";
 import { Icon } from "../components/icons.jsx";
 import { DokanFooter } from "../components/dokan-footer.jsx";
@@ -139,12 +138,6 @@ function Pricing() {
           .from(".p-hero .p-sub", { y: 18, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.5")
           .from(".bill-wrap", { y: 14, opacity: 0, duration: 0.5, ease: "power3.out" }, "-=0.35")
           .from(".p-card", { y: 34, opacity: 0, duration: 0.6, stagger: 0.08, ease: "power3.out" }, "-=0.3");
-        if (ScrollTrigger) {
-          gsap.registerPlugin(ScrollTrigger);
-          gsap.utils.toArray(".cmp-row.head, .cmp-row.data, .cmp-secttl").forEach((el) => {
-            gsap.from(el, { opacity: 0, y: 16, duration: 0.5, ease: "power2.out", immediateRender: false, scrollTrigger: { trigger: el, start: "top 94%", once: true } });
-          });
-        }
       }, rootRef);
     });
     return () => { cancelAnimationFrame(raf); if (ctxRef.current) ctxRef.current.revert(); };

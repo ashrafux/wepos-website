@@ -1,6 +1,13 @@
-/* Site-wide scroll reveal (components/scroll-reveal.js).
-   Uses the `translate` property, not `transform`, so elements that are
-   positioned or rotated with their own transform keep it. */
-.rv-pending { opacity: 0 !important; translate: 0 28px; }
-.rv-anim { transition: opacity .6s cubic-bezier(.22, .61, .36, 1) var(--rv-delay, 0ms), translate .6s cubic-bezier(.22, .61, .36, 1) var(--rv-delay, 0ms) !important; }
-@media (prefers-reduced-motion: reduce) { .rv-pending { opacity: 1 !important; translate: none; } }
+/* Site-wide scroll reveal (components/scroll-reveal.js), matching the
+   "Default loading site animation" reference: a soft fade from blurred to
+   sharp with a short rise, ~0.8s, each block a beat after the last.
+   Uses `translate`, not `transform`, so elements that are positioned or
+   rotated with their own transform keep it. */
+.rv-pending { opacity: 0 !important; translate: 0 18px; filter: blur(6px); }
+.rv-anim {
+  transition:
+    opacity .8s cubic-bezier(.16, 1, .3, 1) var(--rv-delay, 0ms),
+    translate .8s cubic-bezier(.16, 1, .3, 1) var(--rv-delay, 0ms),
+    filter .8s cubic-bezier(.16, 1, .3, 1) var(--rv-delay, 0ms) !important;
+}
+@media (prefers-reduced-motion: reduce) { .rv-pending { opacity: 1 !important; translate: none; filter: none; } }

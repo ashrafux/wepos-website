@@ -476,13 +476,6 @@ function WePOSForDokan() {
           .from(".dk-hero .dk-lead", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.5")
           .from(".dk-hero .dk-ctas, .dk-hero .dk-trust", { y: 16, opacity: 0, duration: 0.5, stagger: 0.08, ease: "power3.out" }, "-=0.4")
           .from(".dk-hero-img", { y: 60, opacity: 0, duration: 0.9, ease: "power3.out" }, "-=0.35");
-        gsap.registerPlugin(ScrollTrigger);
-        gsap.utils.toArray(".dk-reveal").forEach((el) => {
-          gsap.from(el, { opacity: 0, y: 26, duration: 0.6, ease: "power2.out", immediateRender: false, scrollTrigger: { trigger: el, start: "top 92%", once: true } });
-        });
-        gsap.utils.toArray(".dk-stagger > *").forEach((el, i) => {
-          gsap.from(el, { opacity: 0, y: 30, duration: 0.55, delay: (i % 4) * 0.07, ease: "power2.out", immediateRender: false, scrollTrigger: { trigger: el, start: "top 94%", once: true } });
-        });
       }, rootRef);
     });
     return () => { cancelAnimationFrame(raf); if (ctx) ctx.revert(); };

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom/client";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { RollText, RollIcon } from "../components/roll.jsx";
 import { Icon } from "../components/icons.jsx";
 import { DokanFooter } from "../components/dokan-footer.jsx";
@@ -96,7 +95,7 @@ function TryDemo() {
     "--td-accent-soft": TD_ACCENT_SOFT[t.tdAccent] || "#F3F0FD",
   };
 
-  /* Entrance + scroll reveals */
+  /* Hero entrance (scroll reveals come from useScrollReveal) */
   useEffect(() => {
     if (!gsap) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -108,15 +107,6 @@ function TryDemo() {
           .from(".td-hero .td-sub", { y: 20, opacity: 0, duration: 0.6, ease: "power3.out" }, "-=0.5")
           .from(".td-cta-row", { y: 16, opacity: 0, duration: 0.5, ease: "power3.out" }, "-=0.4")
           .from(".td-access-wrap", { y: 40, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=0.55");
-        if (ScrollTrigger) {
-          gsap.registerPlugin(ScrollTrigger);
-          gsap.utils.toArray(".td-reveal").forEach((el) => {
-            gsap.from(el, { opacity: 0, y: 26, duration: 0.6, ease: "power2.out", immediateRender: false, scrollTrigger: { trigger: el, start: "top 92%", once: true } });
-          });
-          gsap.utils.toArray(".td-test").forEach((el, i) => {
-            gsap.from(el, { opacity: 0, y: 30, duration: 0.55, delay: (i % 5) * 0.07, ease: "power2.out", immediateRender: false, scrollTrigger: { trigger: el, start: "top 94%", once: true } });
-          });
-        }
       }, rootRef);
     });
     return () => { cancelAnimationFrame(raf); if (ctxRef.current) ctxRef.current.revert(); };
