@@ -9,6 +9,9 @@ import { SiteHeader } from "../components/shell.jsx";
 import heroImg from "../assets/Hero image.png";
 import dashboardImg from "../assets/hero-dashboard.png";
 import receiptBuilderImg from "../assets/receipt-builder.png";
+import step1Img from "../assets/steps/step-1.jpg";
+import step2Img from "../assets/steps/step-2.jpg";
+import step3Img from "../assets/steps/step-3.jpg";
 import avatarAImg from "../assets/avatar-2.jpg";
 import avatarBImg from "../assets/avatar-3.jpg";
 import "../styles/site.css";
@@ -85,6 +88,9 @@ const STEPS = [
   { title: "Set up outlets and cashiers", body: "Assign outlets to vendors and give staff a cashier login." },
   { title: "Start selling", body: "Vendors ring up sales at the counter, and stock updates across your store." },
 ];
+
+/* Step illustrations: 3D clay renders, one per step, shown between the title and the text */
+const STEP_ARTS = [step1Img, step2Img, step3Img];
 
 /* "Your marketplace, your rules": one tab per area of control.
    `rows` drive the list mock-up on the left (sample names, for illustration). */
@@ -716,6 +722,7 @@ function WePOSForDokan() {
                   <div className="dk-step-card">
                     <span className="dk-step-num">{String(i + 1).padStart(2, "0")}</span>
                     <h3>{s.title}</h3>
+                    <div className="st-art"><img src={STEP_ARTS[i]} alt="" width="760" height="572" loading="lazy" /></div>
                     <p>{s.body}</p>
                   </div>
                 </li>
