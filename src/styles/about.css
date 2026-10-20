@@ -25,3 +25,26 @@
   .about-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 25% 30%, rgba(118,95,240,0.35), transparent 55%), radial-gradient(circle at 80% 70%, rgba(42,90,250,0.3), transparent 55%); }
   .about-cta-inner { position: relative; z-index: 1; }
   .about-cta h2 { font-family: 'Poppins'; font-weight: 700; font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; color: #fff; margin: 0 auto 32px; max-width: 600px; text-wrap: balance; }
+
+  @media (max-width: 900px) {
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+    .about-mission { grid-template-columns: 1fr; gap: 40px; }
+    .values-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .about-stats { gap: 16px; margin-top: 40px; }
+    .about-stat { padding: 22px 18px; border-radius: 18px; }
+    .about-stat-num { font-size: 34px; }
+    .about-stat-label { font-size: 15px; }
+    .about-mission, .about-values, .about-team, .about-cta { margin-top: 72px; }
+    .about-mission-img { min-height: 260px; }
+    .about-mission h2 { font-size: 30px; }
+    .about-mission p, .about-values-head p { font-size: 17px; }
+    .about-values-head { margin-bottom: 36px; }
+    .value-card { padding: 28px 24px; }
+    .team-grid { gap: 16px; margin-top: 36px; }
+    .team-av { font-size: 32px; }
+    .about-cta { padding: 56px 24px; border-radius: 24px; }
+    .about-cta h2 { font-size: 32px; }
+  }

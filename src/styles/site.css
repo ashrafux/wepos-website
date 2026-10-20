@@ -134,3 +134,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   .page-h1 { font-size: 40px; }
   .footer-top { grid-template-columns: 1fr 1fr; }
 }
+
+/* ─── PHONE (shared header and page shell) ─── */
+@media (max-width: 640px) {
+  .nav { padding: 16px; }
+  .nav-left { gap: 12px; }
+  .nav-right { gap: 16px; }
+  .ds-btn-small { height: 38px; padding: 0 16px; }
+  .page-hero { padding: 48px 16px 40px; }
+  .page-h1 { font-size: 32px; }
+  .page-sub { font-size: 18px; }
+  .section { padding: 0 16px; }
+  .section-title { font-size: 30px; }
+}
